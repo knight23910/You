@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<style>
+
+   #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit:cover; 
+  filter:blur(5px) ;
+  z-index: -1;}
+
+body{
+margin:0;
+font-family:Arial;
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+/* container */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* title */
+
+h1{
+color:#ff2e63;
+font-size:40px;
+margin-bottom:10px;
+}
+
+.typing{
+  color:#ff4d88;
+font-size:22px;
+margin-bottom:40px;
+min-height:30px;
+}
+  
+  .shy{
+  color:#ff2e63;
+font-size:22px;
+margin-bottom:40px;
+min-height:30px;
+}
+
+/* slider */
+
+.slider-container{
+width:330px;
+height:380px;
+margin:auto;
+position:relative;
+}
+
+.slider{
+position:relative;
+width:100%;
+height:100%;
+overflow:hidden;
+border-radius:60px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+.slider img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+top:0;
+left:0;
+}
+
+/* heart reveal */
+
+.reveal{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+
+mask-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 32 29.6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M23.6,0c-3.4,0-6.4,2.2-7.6,5.3C14.8,2.2,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.1,16,21.2,16,21.2s16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z'/%3E%3C/svg%3E");
+
+mask-repeat:no-repeat;
+mask-position:center;
+mask-size:0%;
+
+animation:heartGrow 1.5s forwards;
+}
+
+@keyframes heartGrow{
+0%{mask-size:0%;}
+100%{mask-size:300%;}
+}
+
+/* floating hearts */
+
+.heart{
+position:fixed;
+bottom:-20px;
+color:#ff3b6f;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+100%{
+transform:translateY(-100vh) scale(1.5);
+opacity:0;
+}
+}
+
+/* romantic text */
+
+.message{
+  color:#ffd700;
+margin-top:40px;
+font-size:20px;
+line-height:1.6;
+}
+
+</style>
+</head>
+
+<body>
+   <video autoplay muted loop id="myVideo">
+  <source src="you.mp4"  type="video/mp4">
+</video>
+
+<div class="container">
+
+<h1>For My Beautiful Love ❤️</h1>
+  <br>
+  <br>
+
+<div class="typing" id="typing"></div>
+ 
+  <div class="shy">
+    “ਤੇਰੀ ਮੁਸਕਾਨ ਮੇਰੇ ਦਿਲ ਦੀ ਸਭ ਤੋਂ ਸੋਹਣੀ ਖੁਸ਼ੀ ਏ,
+ਤੂੰ ਮੇਰੇ ਲਈ ਸਿਰਫ਼ ਪਿਆਰ ਨਹੀਂ… ਮੇਰੀ ਜ਼ਿੰਦਗੀ ਏ।”
+    <br>
+    <br>
+    
+    
+    “ਜਦੋਂ ਤੂੰ ਮੇਰੇ ਕੋਲ ਹੁੰਦੀ ਏ,
+ਦੁਨੀਆ ਦੀ ਹਰ ਖੁਸ਼ੀ ਮੇਰੇ ਕੋਲ ਆ ਜਾਂਦੀ ਏ।”
+      <br>
+    <br>
+    
+    “ਮੇਰੇ ਦਿਲ ਨੂੰ ਸਿਰਫ਼ ਇਕ ਹੀ ਆਦਤ ਪੈ ਗਈ ਏ,
+ਹਰ ਵੇਲੇ ਤੈਨੂੰ ਹੀ ਯਾਦ ਕਰਨ ਦੀ।”
+    
+      <br>
+    <br>
+    “ਤੂੰ ਮੇਰੀ ਕਿਸਮਤ ਦੀ ਸਭ ਤੋਂ ਸੋਹਣੀ ਲਾਈਨ ਏ,
+ਜਿਸਨੂੰ ਰੱਬ ਨੇ ਖੁਦ ਲਿਖਿਆ ਏ।”
+      <br>
+    <br>
+  </div>
+
+<div class="slider-container">
+
+<div class="slider">
+
+<img src="1.jpg">
+<img src="2.jpg" style="display:none;">
+<img src="3.jpg" style="display:none;">
+<img src="4.jpg" style="display:none;">
+<img src="5.jpg" style="display:none;">
+
+</div>
+
+</div>
+
+<div class="message">
+You are the most beautiful part of my life.  
+Every moment with you feels magical.  
+No matter where life takes us, my heart will always belong to you. ❤️
+</div>
+
+</div>
+
+<script>
+
+/* heart slider */
+
+let images=document.querySelectorAll(".slider img")
+let slider=document.querySelector(".slider")
+let index=0
+
+function nextSlide(){
+
+let next=(index+1)%images.length
+
+let reveal=document.createElement("div")
+reveal.className="reveal"
+
+let img=document.createElement("img")
+img.src=images[next].src
+
+reveal.appendChild(img)
+slider.appendChild(reveal)
+
+setTimeout(()=>{
+
+images[index].style.display="none"
+images[next].style.display="block"
+
+reveal.remove()
+
+index=next
+
+},1500)
+
+}
+
+setInterval(nextSlide,4000)
+
+
+/* typing animation */
+
+let text="You are the reason my world feels so beautiful ❤️"
+let i=0
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i)
+
+i++
+
+setTimeout(typing,70)
+
+}
+
+}
+
+typing()
+
+
+/* floating hearts */
+
+function createHeart(){
+
+let heart=document.createElement("div")
+
+heart.className="heart"
+
+heart.innerHTML="❤"
+
+heart.style.left=Math.random()*100+"vw"
+
+heart.style.fontSize=Math.random()*20+15+"px"
+
+heart.style.animationDuration=Math.random()*3+3+"s"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{
+
+heart.remove()
+
+},6000)
+
+}
+
+setInterval(createHeart,300)
+
+</script>
+
+</body>
+</html>
